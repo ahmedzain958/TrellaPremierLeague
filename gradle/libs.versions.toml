@@ -1,0 +1,72 @@
+[versions]
+
+agp = "8.5.2"
+kotlin = "1.9.0"
+
+ktxCore = "1.10.1"
+androidLifecycle = "2.6.1"
+androidActivityCompose = "1.7.2"
+composeBom = "2022.10.00"
+materialIconsExtended = "1.4.0"
+viewmodelKtx = "2.2.0"
+junit = "4.13.2"
+extJunit = "1.1.5"
+espressoCore = "3.5.1"
+retrofitVersion = "2.9.0"
+retrofitConverter = "2.6.1"
+retrofitAdapter = "0.9.2"
+loggingInterceptor = "4.9.1"
+timber = "4.7.1"
+viewmodelSavedState = "2.2.0"
+lifecycleExt = "2.2.0"
+constraintCompose = "1.0.1"
+coilCompose = "2.2.2"
+coilSvg = "2.0.0"
+hilt = "2.46.1"
+datastore = "1.0.0"
+junitComposetwo = "1.4.1"
+hiltKaptTest = "2.44"
+testRunner = "1.4.0"
+
+[libraries]
+
+ktxCore = { module = "androidx.core:core-ktx", version.ref = "ktxCore" }
+androidLifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidLifecycle" }
+androidActivityCompose = { module = "androidx.activity:activity-compose", version.ref = "androidActivityCompose" }
+composeBom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+composeUi = { module = "androidx.compose.ui:ui" }
+composeGraphic = { module = "androidx.compose.ui:ui-graphics" }
+composeUiToolingPreview = { module = "androidx.compose.ui:ui-tooling-preview" }
+composeMaterial3 = { module = "androidx.compose.material3:material3" }
+materialIconsExtended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
+viewmodelKtx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "viewmodelKtx" }
+junit = { module = "junit:junit", version.ref = "junit" }
+extJunit = { module = "androidx.test.ext:junit", version.ref = "extJunit" }
+espressoCore = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
+junitCompose = { module = "androidx.compose.ui:ui-test-junit" }
+junitComposetwo = { module = "androidx.compose.ui:ui-test-junit4",version.ref="junitComposetwo" }
+composeUiTooling = { module = "androidx.compose.ui:ui-tooling" }
+composeTestManifest = { module = "androidx.compose.ui:ui-test-manifest" }
+retrofitSqure = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
+retrofitConverter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofitConverter" }
+retrofitAdapter = { module = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter", version.ref = "retrofitAdapter" }
+loggingInterceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+viewmodelSavedState = { module = "androidx.lifecycle:lifecycle-viewmodel-savedstate", version.ref = "viewmodelSavedState" }
+lifecycleExt = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycleExt" }
+lifecycleCompiler = { module = "androidx.lifecycle:lifecycle-compiler", version.ref = "viewmodelSavedState" }
+constraintCompose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintCompose" }
+coilCompose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+coilSvg = { module = "io.coil-kt:coil-svg", version.ref = "coilSvg" }
+hiltAndroid = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+hiltTesting = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }
+hiltKaptTesting = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltKaptTest" }
+datastore = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
+testRunner = { module = "androidx.test:runner", version.ref = "testRunner" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+

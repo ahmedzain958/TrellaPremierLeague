@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TrellaPremierLeague</string>
+    <string name="see_all">See All</string>
+    <string name="show_fav">Show favorites</string>
+</resources>
