@@ -12,8 +12,8 @@ interface AppAPis  {
     suspend fun getFixturesList(
         @Header("X-Auth-Token") key:String = BuildConfig.API_KEY,
         @Query("status") status:String="",
-       /* @Query("dateFrom") dateFrom:String="",
-        @Query("dateTo") dateTo:String="",*/
+        @Query("dateFrom") dateFrom:String="",
+        @Query("dateTo") dateTo:String="",
     ): ResponseData
 
     companion object{ operator fun invoke() {} }

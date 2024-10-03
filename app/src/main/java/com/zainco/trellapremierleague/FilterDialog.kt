@@ -33,13 +33,13 @@ fun FilterDialog(
         title = { Text("Filter by Status") },
         text = {
             Column {
-                /*FilterWithDatePicker("From"){
+                FilterWithDatePicker("From"){
                         selectedDateFrom = it
-                }*/
+                }
                 if (selectedDateFrom.isNotEmpty())
-                /*FilterWithDatePicker("To"){
+                FilterWithDatePicker("To"){
                         selectedDateTo = it
-                }*/
+                }
                 FilterOption(text = "All", selected = selectedFilter == "") { selectedFilter = "All" }
                 FilterOption(text = "Scheduled", selected = selectedFilter == MatchStatus.SCHEDULED.status) { selectedFilter =MatchStatus.SCHEDULED.status }
                 FilterOption(text = "Paused", selected = selectedFilter == MatchStatus.PAUSED.status) { selectedFilter =MatchStatus.PAUSED.status }

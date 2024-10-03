@@ -15,7 +15,7 @@ class TeamsRepo @Inject constructor(
 
     fun loadFixturesList(date:Pair<String,String>,status:String) = flow<ResponseData> {
         runCatching {
-            emit(appAPis.getFixturesList(/*dateFrom = date.first, dateTo = date.second,*/status = status))
+            emit(appAPis.getFixturesList(dateFrom = date.first, dateTo = date.second,status = status))
         }
     }
 
