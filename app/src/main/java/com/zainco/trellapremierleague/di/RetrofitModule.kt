@@ -26,14 +26,14 @@ object RetrofitModule {
     @Provides
     fun provideRetrofit(httpClient: OkHttpClient): Retrofit.Builder =
         Retrofit.Builder()
-            .baseUrl(BuildConfig.API_BASE+"/")
+            .baseUrl(BuildConfig.API_BASE + "/")
             .client(httpClient)
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create(Gson()))
 
     @Singleton
     @Provides
-    fun provideApi( retrofit: Retrofit.Builder): AppAPis =
+    fun provideApi(retrofit: Retrofit.Builder): AppAPis =
         retrofit.build().create(AppAPis::class.java)
 
 }

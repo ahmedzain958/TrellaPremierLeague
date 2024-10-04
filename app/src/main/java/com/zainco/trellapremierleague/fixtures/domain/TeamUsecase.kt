@@ -7,14 +7,16 @@ import com.zainco.trellapremierleague.fixtures.data.models.MatchesItem
 import javax.inject.Inject
 
 class TeamUsecase @Inject constructor(
-    private val teamsRepo: TeamsRepo
+    private val teamsRepo: TeamsRepo,
 ) {
     val showEmptyFav = mutableStateOf(false)
-    fun loadFixtures(date:Pair<String,String>,status:String) = (teamsRepo.loadFixturesList(date,status))
+    fun loadFixtures(date: Pair<String, String>, status: String) =
+        (teamsRepo.loadFixturesList(date, status))
+
     fun filter(
         switchOn: Boolean,
         _fixtures: SnapshotStateList<MatchesItem>,
-        tempList: SnapshotStateList<MatchesItem>
+        tempList: SnapshotStateList<MatchesItem>,
     ) {
         if (switchOn) {
             _fixtures.clear()
@@ -38,7 +40,7 @@ class TeamUsecase @Inject constructor(
         db: DataStoreManager,
         found: Boolean,
         _fixtures: SnapshotStateList<MatchesItem>,
-        item: MatchesItem
+        item: MatchesItem,
     ) {
         if (!found) {
             val c = item.copy(isFavorite = false)

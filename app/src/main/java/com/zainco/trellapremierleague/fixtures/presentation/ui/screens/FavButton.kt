@@ -19,7 +19,7 @@ fun FavoriteButton(
     modifier: Modifier = Modifier,
     color: Color = Color(0xffE91E63),
     isFavorite: Boolean,
-    onFavClicked: () -> Unit
+    onFavClicked: () -> Unit,
 ) {
 
     var isFavorite by remember { mutableStateOf(isFavorite) }

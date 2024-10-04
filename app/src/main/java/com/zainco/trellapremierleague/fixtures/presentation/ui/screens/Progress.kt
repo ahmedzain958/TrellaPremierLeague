@@ -15,9 +15,10 @@ import androidx.compose.ui.unit.dp
 
 @Preview
 @Composable
-fun showProgress(){
+fun showProgress() {
     CircularIndeterminateProgressBar(true)
 }
+
 @Composable
 fun CircularIndeterminateProgressBar(isDisplayed: Boolean) {
     if (isDisplayed) {

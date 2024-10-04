@@ -1,4 +1,5 @@
 package com.zainco.trellapremierleague
+
 import android.app.DatePickerDialog
 import android.widget.DatePicker
 import androidx.compose.material.icons.Icons
@@ -19,7 +20,7 @@ import java.util.Calendar
 @OptIn(ExperimentalMaterial3Api::class)
 //@Preview
 @Composable
-fun FilterWithDatePicker(title:String,onDateSelected: (String) -> Unit) {
+fun FilterWithDatePicker(title: String, onDateSelected: (String) -> Unit) {
     val context = LocalContext.current
     var selectedDate by remember { mutableStateOf("") }
     val calendar = Calendar.getInstance()

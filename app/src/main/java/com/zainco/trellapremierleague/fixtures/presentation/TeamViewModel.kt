@@ -3,9 +3,9 @@ package com.zainco.trellapremierleague.fixtures.presentation
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.zainco.trellapremierleague.fixtures.data.db.DataStoreManager
 import com.zainco.trellapremierleague.fixtures.data.models.MatchesItem
 import com.zainco.trellapremierleague.fixtures.domain.TeamUsecase
-import com.zainco.trellapremierleague.fixtures.data.db.DataStoreManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
@@ -17,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class TeamViewModel @Inject constructor(
     private val usecase: TeamUsecase,
-    private val db: DataStoreManager
+    private val db: DataStoreManager,
 ) : ViewModel() {
     private var _fixtures = mutableStateListOf<MatchesItem>()
     private var _favFixture = mutableStateListOf<MatchesItem>()
