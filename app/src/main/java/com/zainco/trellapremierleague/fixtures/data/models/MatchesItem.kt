@@ -1,7 +1,5 @@
 package com.zainco.trellapremierleague.fixtures.data.models
 
-import com.zainco.trellapremierleague.fixtures.data.models.Area
-
 data class MatchesItem(val area: Area = Area(),
                        val matchday: Int = 0,
                        val awayTeam: AwayTeam=AwayTeam(),

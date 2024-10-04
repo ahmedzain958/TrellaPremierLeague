@@ -21,8 +21,8 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun FilterDialog(
-    onApply: (date:Pair<String,String>,filter:String) -> Unit,
-    onDismiss: () -> Unit
+    onApply: (date: Pair<String, String>, filter: String) -> Unit,
+    onDismiss: () -> Unit,
 ) {
     var selectedFilter by remember { mutableStateOf("") }
     var selectedDateFrom by remember { mutableStateOf("") }
@@ -33,26 +33,52 @@ fun FilterDialog(
         title = { Text("Filter by Status") },
         text = {
             Column {
-                FilterWithDatePicker("From"){
-                        selectedDateFrom = it
+                FilterWithDatePicker("From") {
+                    selectedDateFrom = it
                 }
                 if (selectedDateFrom.isNotEmpty())
-                FilterWithDatePicker("To"){
+                    FilterWithDatePicker("To") {
                         selectedDateTo = it
+                    }
+                FilterOption(text = "All", selected = selectedFilter == "") {
+                    selectedFilter = "All"
                 }
-                FilterOption(text = "All", selected = selectedFilter == "") { selectedFilter = "All" }
-                FilterOption(text = "Scheduled", selected = selectedFilter == MatchStatus.SCHEDULED.status) { selectedFilter =MatchStatus.SCHEDULED.status }
-                FilterOption(text = "Paused", selected = selectedFilter == MatchStatus.PAUSED.status) { selectedFilter =MatchStatus.PAUSED.status }
-                FilterOption(text = "Live", selected = selectedFilter == MatchStatus.LIVE.status) { selectedFilter =MatchStatus.LIVE.status }
-                FilterOption(text = "InPlay", selected = selectedFilter == MatchStatus.IN_PLAY.status) { selectedFilter =MatchStatus.IN_PLAY.status }
-                FilterOption(text = "Finished", selected = selectedFilter == MatchStatus.FINISHED.status) { selectedFilter =MatchStatus.FINISHED.status }
-                FilterOption(text = "Postponed", selected = selectedFilter == MatchStatus.POSTPONED.status) { selectedFilter =MatchStatus.POSTPONED.status }
-                FilterOption(text = "Suspended", selected = selectedFilter == MatchStatus.SUSPENDED.status) { selectedFilter =MatchStatus.SUSPENDED.status }
-                FilterOption(text = "Cancelled", selected = selectedFilter == MatchStatus.CANCELLED.status) { selectedFilter =MatchStatus.CANCELLED.status }
+                FilterOption(
+                    text = "Scheduled",
+                    selected = selectedFilter == MatchStatus.SCHEDULED.status
+                ) { selectedFilter = MatchStatus.SCHEDULED.status }
+                FilterOption(
+                    text = "Paused",
+                    selected = selectedFilter == MatchStatus.PAUSED.status
+                ) { selectedFilter = MatchStatus.PAUSED.status }
+                FilterOption(
+                    text = "Live",
+                    selected = selectedFilter == MatchStatus.LIVE.status
+                ) { selectedFilter = MatchStatus.LIVE.status }
+                FilterOption(
+                    text = "InPlay",
+                    selected = selectedFilter == MatchStatus.IN_PLAY.status
+                ) { selectedFilter = MatchStatus.IN_PLAY.status }
+                FilterOption(
+                    text = "Finished",
+                    selected = selectedFilter == MatchStatus.FINISHED.status
+                ) { selectedFilter = MatchStatus.FINISHED.status }
+                FilterOption(
+                    text = "Postponed",
+                    selected = selectedFilter == MatchStatus.POSTPONED.status
+                ) { selectedFilter = MatchStatus.POSTPONED.status }
+                FilterOption(
+                    text = "Suspended",
+                    selected = selectedFilter == MatchStatus.SUSPENDED.status
+                ) { selectedFilter = MatchStatus.SUSPENDED.status }
+                FilterOption(
+                    text = "Cancelled",
+                    selected = selectedFilter == MatchStatus.CANCELLED.status
+                ) { selectedFilter = MatchStatus.CANCELLED.status }
             }
         },
         confirmButton = {
-            Button(onClick = { onApply(Pair(selectedDateFrom,selectedDateTo),selectedFilter) }) {
+            Button(onClick = { onApply(Pair(selectedDateFrom, selectedDateTo), selectedFilter) }) {
                 Text("Apply")
             }
         },
@@ -68,7 +94,7 @@ fun FilterDialog(
 fun FilterOption(
     text: String,
     selected: Boolean,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     Row(
         modifier = Modifier
@@ -87,6 +113,7 @@ fun FilterOption(
         )
     }
 }
+
 enum class MatchStatus(val status: String) {
     SCHEDULED("SCHEDULED"),
     LIVE("LIVE"),
